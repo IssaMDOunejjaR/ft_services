@@ -1,10 +1,8 @@
 FROM alpine
 
 RUN apk update && apk upgrade
-RUN apk add vim
-RUN apk add openrc --no-cache
-RUN apk add vsftpd
-RUN apk add lftp
+RUN apk add openrc vsftpd lftp
+
 RUN openrc
 RUN touch /run/openrc/softlevel
 

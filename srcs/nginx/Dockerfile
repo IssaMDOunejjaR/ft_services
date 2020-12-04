@@ -6,11 +6,15 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private
 
 COPY /srcs/nginx.conf /etc/nginx/
 COPY /srcs/index.html /www/
-COPY /srcs/sshd_config /etc/ssh/
 COPY /srcs/supervisord.conf /etc/
 
 RUN openrc
 RUN touch /run/openrc/softlevel
+
+RUN mkdir -p /run/nginx
+RUN adduser -D user
+RUN echo "user:password" | chpasswd
+RUN ssh-keygen -A
 
 # CMD /usr/bin/supervisord -c /etc/supervisord.conf && tail -f /dev/null
 
