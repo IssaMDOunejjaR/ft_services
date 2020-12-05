@@ -16,6 +16,6 @@ RUN adduser -D user
 RUN echo "user:password" | chpasswd
 RUN ssh-keygen -A
 
-# CMD /usr/bin/supervisord -c /etc/supervisord.conf && tail -f /dev/null
+CMD /usr/bin/supervisord -c /etc/supervisord.conf
 
 EXPOSE 443 80 22
