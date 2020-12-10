@@ -20,3 +20,17 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manife
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/metallb.yaml
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 kubectl apply -f srcs/metallb.yaml
+
+# Apply Yaml Files
+kubectl apply -f srcs/nginx/
+kubectl apply -f srcs/wordpress/
+kubectl apply -f srcs/phpmyadmin/
+kubectl apply -f srcs/grafana/
+kubectl apply -f srcs/mysql/
+kubectl apply -f srcs/influxdb/
+kubectl apply -f srcs/ftps/
+
+minikube stop
+minikube start
+eval $(minikube docker-env)
+minikube dashboard

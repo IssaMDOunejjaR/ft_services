@@ -3,6 +3,8 @@ FROM alpine
 RUN apk update && apk upgrade
 RUN apk add openrc mysql mysql-client supervisor
 
+RUN apk add telegraf --update --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
+
 COPY /srcs/mariadb-server.cnf /etc/my.cnf.d/
 COPY /srcs/ /tmp
 RUN mkdir /run/mariadb
