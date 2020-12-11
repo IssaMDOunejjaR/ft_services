@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: grafana-service
+    name: grafana
     labels:
         app: grafana
     annotations:
@@ -18,7 +18,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: grafana-deployment
+  name: grafana
   labels:
     app: grafana
 spec:

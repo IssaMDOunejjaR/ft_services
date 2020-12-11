@@ -1,3 +1,7 @@
 #! /bin/sh
 
-influx execute "create database collectd"
+service influxdb start
+
+influx -execute "create database influxdb"
+
+service influxdb restart
