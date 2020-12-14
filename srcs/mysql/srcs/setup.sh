@@ -1,6 +1,6 @@
 #! /bin/sh
 
-if [ ! -f "/var/lib/mysql/ib_buffer_pool" ];
+if [ ! -d "/var/lib/mysql/phpmyadmin" ];
 then
     /etc/init.d/mariadb setup
     service mariadb start
@@ -21,3 +21,4 @@ fi
 sed -i 's/skip-networking/# skip-networking/g' /etc/my.cnf.d/mariadb-server.cnf
 
 service mariadb start
+/usr/bin/supervisord -c /etc/supervisord.conf

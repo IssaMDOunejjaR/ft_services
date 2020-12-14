@@ -36,3 +36,23 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 3306
+        volumeMounts:
+          - mountPath: /var/lib/mysql
+            name: var-lib-mysql
+      volumes:
+      - name: var-lib-mysql
+        persistentVolumeClaim:
+          claimName: mysql-storage
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: mysql
+  name: mysql-storage
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500M
