@@ -1,0 +1,12 @@
+References:
+- https://wiki.alpinelinux.org/wiki/Nginx
+- https://wiki.alpinelinux.org/wiki/WordPress
+- https://wiki.alpinelinux.org/wiki/Nginx_with_PHP#PHP7_Installation
+- https://wiki.alpinelinux.org/wiki/MariaDB
+- https://wiki.alpinelinux.org/wiki/Production_DataBases_:_mysql
+- https://wiki.alpinelinux.org/wiki/Setting_up_a_ssh-server
+- https://wiki.alpinelinux.org/wiki/PhpMyAdmin
+- https://wiki.alpinelinux.org/wiki/FTP
+- https://metallb.universe.tf/installation/
+- https://www.liquidweb.com/kb/configure-vsftpd-ssl/
+- https://docs.influxdata.com/telegraf/v1.16/administration/configuration/
